@@ -3,7 +3,6 @@ const defaults={packing:['여권 유효일 확인','여행자보험 가입','위
 let db=JSON.parse(localStorage.getItem(KEY)||'null')||structuredClone(defaults); if(!db.packing.includes('샤워필터')) db.packing.push('샤워필터'); let filter='전체';
 function persist(){localStorage.setItem(KEY,JSON.stringify(db))}function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.go===id));scrollTo(0,0);}document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
 function dday(){let n=new Date(),t=new Date('2026-10-17T00:00:00+09:00'),d=Math.ceil((t-n)/86400000);document.getElementById('dday').textContent=d>0?'D-'+d:d===0?'D-DAY':'여행중'}dday();
-const days=[['10/17 토 · DAY 1',['09:05 인천공항 T2 출발 · KE471','12:35 떤선녓공항 T2 도착','14:00 Sherwood Residence 체크인']],['10/18 일 · DAY 2',[]],['10/19 월 · DAY 3',[]],['10/20 화 · DAY 4',[]],['10/21 수 · DAY 5',[]],['10/22 목 · DAY 6',[]],['10/23 금 · DAY 7',['12:00 호텔 체크아웃','13:55 떤선녓공항 T2 출발 · KE472','21:25 인천공항 T2 도착']]];document.getElementById('days').innerHTML=days.map(d=>`<div class="day"><h3>${d[0]}</h3>${d[1].length?d[1].map(e=>`<div class="event">${e}</div>`).join(''):'<div class="event">＋ 일정은 다음 버전에서 추가/수정 가능하도록 확장</div>'}</div>`).join('');
 function renderPacking(){let box=document.getElementById('packingList');box.innerHTML=db.packing.map((x,i)=>`<label class="check ${db.checked.includes(i)?'done':''}"><input type="checkbox" ${db.checked.includes(i)?'checked':''} onchange="togglePack(${i})"><span>${x}</span></label>`).join('');let n=db.checked.length,p=db.packing.length;document.getElementById('progressText').textContent=`${n} / ${p} 완료`;document.getElementById('progressBar').style.width=(n/p*100)+'%';}function togglePack(i){db.checked=db.checked.includes(i)?db.checked.filter(x=>x!==i):[...db.checked,i];persist();renderPacking()}function toggleFood(i){db.eaten=db.eaten.includes(i)?db.eaten.filter(x=>x!==i):[...db.eaten,i];persist();renderPacking()}renderPacking();
 let foodFilter='전체';
 function placeCard(p){return `<div class="card"><div class="placeTop"><div><b>${esc(p.name)}</b><p>${esc(p.address||'주소 미입력')}</p></div><span class="badge">${p.category}</span></div>${p.hours?`<p>🕐 ${esc(p.hours)}</p>`:''}${p.memo?`<p>📝 ${esc(p.memo)}</p>`:''}<div class="actions">${p.map?`<button onclick="window.open('${attr(p.map)}','_blank')">🗺 지도</button>`:''}<button onclick="editPlace('${p.id}')">✏️ 수정</button><button onclick="deletePlace('${p.id}')">🗑 삭제</button></div></div>`}
@@ -46,7 +45,20 @@ renderPlaces();renderRestaurants();initTourGoogleList();
 function openHotelMap(){window.open('https://www.google.com/maps/search/?api=1&query=Sherwood+Residence+127+Pasteur+Ho+Chi+Minh+City','_blank')}
 function openCoopMap(){window.open('https://www.google.com/maps/place/Coopmart+Nguyen+Dinh+Chieu/@10.781655,106.6882704,17z/data=!4m15!1m8!3m7!1s0x31752f3ac5d26bcb:0x10bbc4cc0d945d36!2zMTY4IMSQxrDhu51uZyBOZ3V54buFbiDEkMOsbmggQ2hp4buDdSwgWHXDom4gSMOyYSwgSOG7kyBDaMOtIE1pbmgsIOuyoO2KuOuCqA!3b1!8m2!3d10.7771335!4d106.6889892!16s%2Fg%2F11tsgzy2d4!3m5!1s0x31752f31200920bd:0x987d7568197ad8ab!8m2!3d10.7814923!4d106.6924141!16s%2Fg%2F1thnl88q?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D','_blank')}
 function exportData(){let b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='HCM_TRIP_2026_backup.json';a.click();URL.revokeObjectURL(a.href)}function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{db=JSON.parse(r.result);persist();renderPacking();renderPlaces();renderRestaurants();alert('복원했습니다.')}catch{alert('올바른 백업 파일이 아닙니다.')}};r.readAsText(f)}
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js');
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('./service-worker.js');
+      reg.update();
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        refreshing = true;
+        window.location.reload();
+      });
+    } catch (err) { console.warn('Service worker registration failed', err); }
+  });
+}
 
 // v0.8.1 shopping & massage
 let shopTab='벤탄시장';

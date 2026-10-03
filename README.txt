@@ -1,6 +1,13 @@
-HCM Trip PWA v0.8.1
-- 음식 탭을 음식점 DB 전용 UI로 개편
-- Excel 1차 조사 음식점/카페/디저트 41곳 반영
-- 검색 및 카테고리 필터
-- 카드: 상호명/카테고리/대표음식
-- 상세 Bottom Sheet: 운영시간/Google 평점/가격대/추천메뉴/주소/비고/Google Maps
+HCM Trip PWA v0.8.2
+
+Changes:
+- Removed Schedule tab from home shortcuts and bottom navigation.
+- Removed schedule page and schedule rendering code.
+- Service Worker cache version bumped to v0.8.2.
+- Network-first strategy for HTML, app.js, style.css, restaurants.js, shopping.js, and manifest.json.
+- Old caches are automatically deleted on activation.
+- skipWaiting() + clients.claim() allow new service workers to take control promptly.
+- Data JS files are placed in repository root to match GitHub web upload workflow.
+
+GitHub upload:
+Upload ALL files/folders inside this directory to the repository root. Do not upload the ZIP itself.
