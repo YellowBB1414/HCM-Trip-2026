@@ -1,7 +1,4 @@
-HCM Trip Dashboard PWA v0.8.9
-- Hero generalized to TRIP DASHBOARD
-- Flight and accommodation records can be added, edited, and deleted
-- Delete actions require confirmation
-- Existing KE471/KE472 and Sherwood Residence data retained as defaults
-- Sherwood-specific detail guide hides automatically if Sherwood Residence is removed
-- Service worker cache v0.8.9
+HCM Trip PWA v0.9.2
+- Approved HO CHI MINH / Trip Dashboard / Made by Yellow Bourbon hero applied as a new local asset.
+- Legacy hero HTML layers removed; header is now a single-image structure.
+- Hero asset URL and service-worker cache version changed to prevent stale banner caching.

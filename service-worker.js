@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hcm-trip-v0.9.1';
+const CACHE_NAME = 'hcm-trip-v0.9.2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -7,7 +7,7 @@ const APP_SHELL = [
   './manifest.json',
   './restaurants.js',
   './shopping.js',
-  './assets/home-hero-v091.png'
+  './assets/trip-dashboard-hero-v092.png'
 ];
 
 self.addEventListener('install', event => {
