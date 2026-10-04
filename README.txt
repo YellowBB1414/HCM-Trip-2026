@@ -1,5 +1,7 @@
-HCM Trip PWA v0.8.7
-- TPBank DCC 거절/계좌 선택 안내 추가
-- 금은방 환전 금액 확인 및 소매치기 주의 추가
-- 베트남 주요 VND 지폐 6종 이미지/금액 가이드 추가
-- Service Worker cache v0.8.7
+HCM Trip Dashboard PWA v0.8.9
+- Hero generalized to TRIP DASHBOARD
+- Flight and accommodation records can be added, edited, and deleted
+- Delete actions require confirmation
+- Existing KE471/KE472 and Sherwood Residence data retained as defaults
+- Sherwood-specific detail guide hides automatically if Sherwood Residence is removed
+- Service worker cache v0.8.9

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hcm-trip-v0.8.7';
+const CACHE_NAME = 'hcm-trip-v0.8.9';
 const APP_SHELL = [
   './',
   './index.html',
