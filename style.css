@@ -42,7 +42,7 @@ linear-gradient(138deg,#780015 0%,#bd001e 31%,#f12b35 58%,#9c001b 100%)}
 /* v0.6 — reference-image hero + true mobile app shell */
 html{background:#e9e5e3}
 body{width:100%;max-width:430px;min-height:100vh;margin:0 auto;background:linear-gradient(180deg,#fff8f4 0,#fbf8f6 45%,#f8f6f4 100%);box-shadow:0 0 38px rgba(55,24,20,.16);overflow-x:hidden}
-.home-hero{height:auto;min-height:0;aspect-ratio:308/268;padding:0;background-image:linear-gradient(180deg,rgba(66,0,8,.03),rgba(66,0,8,.04)),url('assets/home-hero.png');background-size:cover;background-position:center top;background-repeat:no-repeat;box-shadow:0 10px 26px rgba(91,0,12,.22)}
+.home-hero{height:auto;min-height:0;aspect-ratio:308/268;padding:0;background-image:linear-gradient(180deg,rgba(66,0,8,.03),rgba(66,0,8,.04)),url('assets/home-hero-v091.png?v=091');background-size:cover;background-position:center top;background-repeat:no-repeat;box-shadow:0 10px 26px rgba(91,0,12,.22)}
 .home-hero:before,.home-hero:after,.home-hero .flag-wave,.home-hero .sun-glow,.home-hero .flag-star,.home-hero .city-silhouette,.home-hero .header-content,.home-hero .hero-tools{display:none!important}
 main{max-width:430px;margin:0 auto}
 .scroll-nav{left:50%;right:auto;transform:translateX(-50%);width:min(430px,100vw);max-width:430px;border-radius:18px 18px 0 0;box-shadow:0 -8px 26px rgba(59,25,22,.12)}
