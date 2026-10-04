@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hcm-trip-v0.9.3';
+const CACHE_NAME = 'hcm-trip-v0.9.4';
 const APP_SHELL = [
   './',
   './index.html',
@@ -7,7 +7,7 @@ const APP_SHELL = [
   './manifest.json',
   './restaurants.js',
   './shopping.js',
-  './assets/trip-dashboard-hero-v093.png'
+  './trip-dashboard-hero-v094.png'
 ];
 
 self.addEventListener('install', event => {
@@ -31,7 +31,7 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
 
   const isDocument = event.request.mode === 'navigate';
-  const isCoreData = /\/(app\.js|style\.css|restaurants\.js|shopping\.js|manifest\.json|trip-dashboard-hero-v093\.png)$/.test(url.pathname);
+  const isCoreData = /\/(app\.js|style\.css|restaurants\.js|shopping\.js|manifest\.json|trip-dashboard-hero-v094\.png)$/.test(url.pathname);
 
   if (isDocument || isCoreData) {
     event.respondWith(

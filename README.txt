@@ -1,3 +1,8 @@
+HCM Trip PWA v0.9.4
+- Hero asset moved to repository root to avoid GitHub web-upload folder omissions.
+- Hero: ./trip-dashboard-hero-v094.png
+- Service worker cache: hcm-trip-v0.9.4
+
 HCM Trip PWA v0.9.3
 - Hero banner rendered with a real <img> element.
 - New asset: assets/trip-dashboard-hero-v093.png
