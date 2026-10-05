@@ -1,18 +1,24 @@
-const CACHE_NAME = 'hcm-trip-v0.9.6';
+const CACHE_NAME = 'hcm-trip-v0.9.8';
 const APP_SHELL = [
   './',
   './index.html',
   './style.css',
-  './app.js',
+  './app-v098.js',
   './manifest.json',
-  './restaurants.js',
-  './shopping.js',
+  './restaurants-v098.js',
+  './shopping-v098.js',
   './trip-dashboard-hero-v094.png',
   './saigon-centre-v096.png',
   './vincom-mega-mall-v096.png',
   './crescent-mall-v096.png',
-  './van-hanh-mall-v096.png'
-];
+  './van-hanh-mall-v096.png',
+  './massage-22spa-v097.png',
+  './massage-ayla-v097.png',
+  './massage-temple-leaf-v097.png',
+  './massage-yuju-v097.png',
+  './massage-miu-miu-v097.png',
+  './massage-137-v097.png',
+  './massage-dielo-v097.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(

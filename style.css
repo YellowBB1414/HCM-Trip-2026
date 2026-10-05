@@ -147,3 +147,6 @@ main{overflow:visible!important}
   padding:0 !important;
 }
 @media(min-width:431px){.home-hero{border-radius:26px 26px 0 0 !important}.home-hero-img{border-radius:26px 26px 0 0 !important}}
+
+/* v0.9.7 massage photos */
+.massage-card{padding:0;overflow:hidden}.massage-photo{width:100%;height:210px;background:#f5eee9;overflow:hidden;display:grid;place-items:center}.massage-photo img{width:100%;height:100%;object-fit:cover;display:block}.massage-photo-fallback{width:100%;height:100%;place-items:center;text-align:center;font-size:42px}.massage-photo-fallback small{display:block;font-size:11px;color:#756a6e;margin-top:6px}.massage-copy{padding:14px}.massage-copy b{font-size:14px}.massage-copy p{font-size:11px;color:var(--muted);line-height:1.5}.massage-copy button{border:0;border-radius:11px;background:#1769aa;color:#fff;padding:9px 12px;font-weight:850}
