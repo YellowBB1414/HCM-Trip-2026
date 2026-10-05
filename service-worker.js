@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hcm-trip-v0.9.5';
+const CACHE_NAME = 'hcm-trip-v0.9.6';
 const APP_SHELL = [
   './',
   './index.html',
@@ -8,10 +8,10 @@ const APP_SHELL = [
   './restaurants.js',
   './shopping.js',
   './trip-dashboard-hero-v094.png',
-  './assets/tourism/saigon-centre-takashimaya.png',
-  './assets/tourism/vincom-mega-mall-thao-dien.png',
-  './assets/tourism/crescent-mall.png',
-  './assets/tourism/van-hanh-mall.png'
+  './saigon-centre-v096.png',
+  './vincom-mega-mall-v096.png',
+  './crescent-mall-v096.png',
+  './van-hanh-mall-v096.png'
 ];
 
 self.addEventListener('install', event => {
