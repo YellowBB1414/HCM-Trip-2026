@@ -1,7 +1,7 @@
-const CACHE_NAME = 'hcm-trip-v0.9.10';
+const CACHE_NAME = 'hcm-trip-v0.9.11';
 const APP_SHELL = [
-  './', './index.html', './style.css', './app-v0910.js', './manifest.json',
-  './restaurants-v0910.js', './shopping-v0910.js',
+  './', './index.html', './style.css', './app-v0911.js', './manifest.json', './live-v0911.js',
+  './restaurants-v0911.js', './shopping-v0911.js',
   './trip-dashboard-hero-v094.png',
   './saigon-centre-v096.png', './vincom-mega-mall-v096.png', './crescent-mall-v096.png', './van-hanh-mall-v096.png',
   './massage-22spa-v097.png', './massage-ayla-v097.png', './massage-temple-leaf-v097.png', './massage-yuju-v097.png',
